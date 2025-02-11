@@ -1,0 +1,6 @@
+/* ItemListContainer INICIO */
+.grid_items{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+/* ItemListContainer FINAL */
