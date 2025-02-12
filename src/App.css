@@ -27,6 +27,11 @@ p {
   max-width: 1200px;
   margin: 0 auto;
 }
+.contenedor-header {
+  width: 95%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
 
 a {
   text-decoration: none;
