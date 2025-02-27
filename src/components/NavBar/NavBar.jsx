@@ -9,7 +9,7 @@ const NavBar = () => {
             <header className="contenedor separacion-header">
                 <div className="header contenedor-header">
                     <div className="logo">
-                        <h1>AKATASUKI</h1>
+                        <h1>AKATSUKI</h1>
                         <img src={DevImge} alt="" />
                     </div>
 

@@ -23,7 +23,7 @@ const App = () => {
           <NavBar />
           <Hero />
         </div>
-        <ItemListContainer greetings={"Bienvenido matero!"} />
+        <ItemListContainer greetings={"Bienvenido a AKATSUKI!"} />
       </div>
     </>
   )
