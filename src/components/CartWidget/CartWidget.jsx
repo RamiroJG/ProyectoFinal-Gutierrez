@@ -1,16 +1,18 @@
 import { IoPersonOutline } from "react-icons/io5";
+import { RxPerson } from "react-icons/rx";
+
 import { IoCartOutline } from "react-icons/io5";
 
-import './Widgets.css'
+import './CartWidget.css'
 
 
-const Widgets = () => {
+const CartWidget = () => {
     return (
         <div className="widgets">
-            <IoPersonOutline />
+            <RxPerson />
             <IoCartOutline />
         </div>
     )
 }
 
-export default Widgets
+export default CartWidget

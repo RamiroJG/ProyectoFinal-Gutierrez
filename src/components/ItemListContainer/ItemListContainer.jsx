@@ -1,6 +1,5 @@
 import Items from '../Items/Items'
 
-
 import './ItemListContainer.css'
 
 const ItemListContainer = ({ greetings }) => {

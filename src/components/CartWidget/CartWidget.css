@@ -1,0 +1,14 @@
+/* WIDGETS INICIO */
+.widgets{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+    font-size: 2.5rem;
+    position: relative;
+}
+
+.widgets svg{
+    color: white;
+}
+/* WIDGETS FINAL */

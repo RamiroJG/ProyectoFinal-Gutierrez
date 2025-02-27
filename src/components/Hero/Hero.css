@@ -1,0 +1,19 @@
+/* Título Akatsuki */
+.akatsuki-title {
+    font-size: 8rem;
+    text-align: center;
+    color: white;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+  }
+    
+  .akatsuki-kanji {
+    color: #c41e3a;
+    font-size: 9rem;
+    display: inline-block;
+    margin-left: 1rem;
+  }
+  
+  .hero{
+    display: flex;
+    justify-content: center;
+  }
