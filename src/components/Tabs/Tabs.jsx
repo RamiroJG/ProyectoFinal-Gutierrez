@@ -1,40 +1,58 @@
-import "./Tabs.css";
+import "./Tabs.css"
+import { useNavigate } from 'react-router-dom'
 
 const Tabs = ({ activeTab, setActiveTab }) => {
+    const navigate = useNavigate()
+
+    const handleTabClick = (tabValue) => {
+        setActiveTab(tabValue)
+
+        // Si es "all", volvemos a la raíz "/", sino vamos a "/figures", "/clothing", etc.
+        if (tabValue === "all") {
+            navigate("/")
+        } else {
+            navigate(`/${tabValue}`)
+        }
+    }
+
     return (
         <div className="tabs-header">
             <button
                 className={`tab-button ${activeTab === "all" ? "active" : ""}`}
-                onClick={() => setActiveTab("all")}
+                onClick={() => handleTabClick("all")}
             >
                 Todos
             </button>
+
             <button
                 className={`tab-button ${activeTab === "figures" ? "active" : ""}`}
-                onClick={() => setActiveTab("figures")}
+                onClick={() => handleTabClick("figures")}
             >
                 Figuras
             </button>
+
             <button
                 className={`tab-button ${activeTab === "clothing" ? "active" : ""}`}
-                onClick={() => setActiveTab("clothing")}
+                onClick={() => handleTabClick("clothing")}
             >
                 Ropa
             </button>
+
             <button
                 className={`tab-button ${activeTab === "accessories" ? "active" : ""}`}
-                onClick={() => setActiveTab("accessories")}
+                onClick={() => handleTabClick("accessories")}
             >
                 Accesorios
             </button>
+
             <button
                 className={`tab-button ${activeTab === "collectibles" ? "active" : ""}`}
-                onClick={() => setActiveTab("collectibles")}
+                onClick={() => handleTabClick("collectibles")}
             >
                 Coleccionables
             </button>
         </div>
-    );
-};
+    )
+}
 
-export default Tabs;
+export default Tabs

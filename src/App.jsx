@@ -1,45 +1,48 @@
-// App.jsx
 import { Routes, Route } from 'react-router-dom'
-import NavBar from './components/NavBar/NavBar'
-import ItemListContainer from './components/ItemListContainer/ItemListContainer'
+import Layout from './components/Layout/Layout'
 import Hero from './components/Hero/Hero'
-
+import ItemListContainer from './components/ItemListContainer/ItemListContainer'
+import ItemDetail from './components/ItemDetail/ItemDetail'
 import './App.css'
 
 const App = () => {
   return (
-    <>
-      {/* Fondo con el patrón de nubes */}
-      <div className="bg-patron">
-        <div className="cloud-pattern"></div>
-        <div className="floating-clouds"></div>
-        <div className="blur-effect"></div>
-        <div className="main-content">
-          <NavBar />
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <>
-                  <Hero />
-                  <ItemListContainer />
-                </>
-              }
-            />
-            {/* <Route
-              path="/categoria/:categoria"
-              element={
-                <>
-                  <Hero />
-                  <ItemListContainer />
-                </>
-              }
-            /> */}
-            <Route path="*" element={<h2>404 - Página no encontrada</h2>} />
-          </Routes>
-        </div>
-      </div>
-    </>
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <Layout>
+            <Hero />
+            <ItemListContainer />
+          </Layout>
+        }
+      />
+      <Route
+        path="/:categoria"
+        element={
+          <Layout>
+            <Hero />
+            <ItemListContainer />
+          </Layout>
+        }
+      />
+      <Route
+        path="/detalle/:id"
+        element={
+          <Layout>
+            <ItemDetail />
+          </Layout>
+        }
+      />
+      <Route
+        path="*"
+        element={
+          <Layout>
+            <h2>404 - Página no encontrada</h2>
+          </Layout>
+        }
+      />
+    </Routes>
   )
 }
 

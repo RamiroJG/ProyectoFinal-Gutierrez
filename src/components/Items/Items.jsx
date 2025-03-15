@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './Items.css'
 
 const Items = ({
@@ -8,6 +9,7 @@ const Items = ({
     isNew = false,
     isBestseller = false,
     discountPrice = null,
+    id
 }) => {
     return (
         <div className="product-card-container">
@@ -43,9 +45,14 @@ const Items = ({
                     </div>
                 </div>
 
-                <button className="add-to-cart-button" disabled={!nombre}>
-                    🛒 Añadir al carrito
-                </button>
+                <div className='flex-carrito-detalle'>
+                    <button className="add-to-cart-button" disabled={!nombre}>
+                        🛒 Añadir al carrito
+                    </button>
+                    <Link to={`/detalle/${id}`} className="add-to-cart-button" disabled={!nombre}>
+                        👀 Ver detalle
+                    </Link>
+                </div>
             </div>
         </div>
     )

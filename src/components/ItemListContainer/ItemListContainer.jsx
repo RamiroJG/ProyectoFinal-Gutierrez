@@ -3,44 +3,54 @@ import { useParams } from 'react-router-dom'
 import Items from '../Items/Items'
 import Tabs from '../Tabs/Tabs'
 import fetchData from '../../fetchData'
-
 import './ItemListContainer.css'
 
 const ItemListContainer = () => {
     const { categoria } = useParams()
-    const [activeTab, setActiveTab] = useState("all");
-    const [productos, setProductos] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const [productos, setProductos] = useState([])
+    const [loading, setLoading] = useState(true)
+    const [activeTab, setActiveTab] = useState(categoria || "all")
 
     useEffect(() => {
         fetchData().then(data => {
-            setProductos(data);
-            setLoading(false);
-        });
-    }, []);
+            setProductos(data)
+            setLoading(false)
+        })
+    }, [])
 
+    // Cada vez que cambie la categoría en la URL, actualiza el estado
+    useEffect(() => {
+        if (categoria) {
+            setActiveTab(categoria)
+        } else {
+            setActiveTab("all")
+        }
+    }, [categoria])
 
-    // Si activeTab es "all", muestra todos, de lo contrario, filtra según category
-    // de lo contrario, usamos el estado activeTab (por ejemplo, desde los Tabs)
-    const productosFiltrados = categoria
-        ? productos.filter(item => item.category.toLowerCase() === categoria.toLowerCase())
-        : activeTab === "all"
+    // Filtramos según el activeTab (que se sincroniza con el param)
+    const productosFiltrados =
+        activeTab === "all"
             ? productos
-            : productos.filter(item => item.category === activeTab)
+            : productos.filter(item =>
+                item.category.toLowerCase() === activeTab.toLowerCase()
+            )
 
     return (
-        <div className='' style={{ paddingTop: "12rem" }}>
+        <div style={{ paddingTop: "12rem" }}>
             <section className='contenedor'>
                 <div className='flex-destacados-title'>
                     <h3>Productos destacados</h3>
                     <p>Descubre nuestra selección de productos más populares del mundo de Naruto</p>
+
+                    {/* Tabs para cambiar de categoría */}
                     <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
                 </div>
-                <div className='grid_items text-center '>
+
+                <div className='grid_items text-center'>
                     {loading ? (
                         <p>Cargando productos...</p>
                     ) : (
-                        productosFiltrados.map((producto) => (
+                        productosFiltrados.map(producto => (
                             <Items
                                 key={producto.id}
                                 id={producto.id}
@@ -56,6 +66,7 @@ const ItemListContainer = () => {
                         ))
                     )}
                 </div>
+
                 <div className='btn-products'>
                     <button className='all-products'>
                         Ver todos los productos

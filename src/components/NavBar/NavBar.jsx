@@ -2,6 +2,7 @@ import CartWidget from "../CartWidget/CartWidget"
 
 import './Header.css'
 import DevImge from "../../assets/img/logoakatsuki.png"
+import { Link } from "react-router-dom"
 
 const NavBar = () => {
     return (
@@ -17,10 +18,10 @@ const NavBar = () => {
 
                         <nav>
                             <ul className="nav-principal">
-                                <li>Inicio</li>
-                                <li>Productos</li>
-                                <li>Sobre Nosotros</li>
-                                <li>Contacto</li>
+                                <Link to='/'>Inicio</Link>
+                                <Link to='/produtos'>Productos</Link>
+                                <Link to='/nosotros'>Sobre Nosotros</Link>
+                                <Link to='/contacto'>Contacto</Link>
                             </ul>
                         </nav>
 
