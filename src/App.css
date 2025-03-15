@@ -42,16 +42,12 @@ img {
   display: block;
 }
 
-h1, h2, h3 {
-  margin: 0 0 2rem  0 ;
-}
+
 h1 {
   font-size: 4rem;
 }
 h3 {
   font-size: 2.8rem;
-  text-align: center;
-  text-transform: uppercase;
 }
 ul {
   padding: 0;

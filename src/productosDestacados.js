@@ -1,0 +1,53 @@
+import akatsukiImg from './assets/img/naruto_modo_sabio.webp';
+
+export const productos = [
+    {
+        id: 1,
+        name: "Figura de Acción Naruto Modo Sabio",
+        category: "figures",
+        price: 59.99,
+        rating: 4.8,
+        image: akatsukiImg,
+        isBestseller: true,
+        stock: 15,
+    },
+    {
+        id: 2,
+        name: "Figura Sasuke Uchiha Susanoo",
+        category: "figures",
+        price: 69.99,
+        rating: 4.9,
+        image: akatsukiImg,
+        isNew: true,
+        stock: 8,
+    },
+    {
+        id: 3,
+        name: "Sudadera Hokage Negro",
+        category: "clothing",
+        price: 49.99,
+        rating: 4.6,
+        image: akatsukiImg,
+        stock: 25,
+    },
+    {
+        id: 4,
+        name: "Collar de Tsunade",
+        category: "accessories",
+        price: 24.99,
+        rating: 4.5,
+        image: akatsukiImg,
+        stock: 30,
+    },
+    {
+        id: 5,
+        name: "Set de Kunai (3 piezas)",
+        category: "collectibles",
+        price: 34.99,
+        discountPrice: 29.99,
+        rating: 4.7,
+        image: akatsukiImg,
+        isNew: true,
+        stock: 40,
+    },
+]

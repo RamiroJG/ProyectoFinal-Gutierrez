@@ -2,6 +2,41 @@
 .grid_items{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
 }
 
+.flex-destacados-title{
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-destacados-title h3{
+    font-size: 34px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.flex-destacados-title p{
+    color: #718096;
+    font-size: 20px;
+    margin-top: 0px;
+}
+
+.btn-products{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.all-products{
+    display: flex;
+    justify-content: center;
+    border: 1px solid #f97316;
+    padding: 12px;
+    color: #f97316;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+    margin: 0 auto;
+}
 /* ItemListContainer FINAL */

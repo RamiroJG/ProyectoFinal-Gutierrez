@@ -1,29 +1,43 @@
+// App.jsx
+import { Routes, Route } from 'react-router-dom'
 import NavBar from './components/NavBar/NavBar'
-
-import './App.css'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import Hero from './components/Hero/Hero'
+
+import './App.css'
 
 const App = () => {
   return (
     <>
-      {/* Fondo con el patron de las nubes */}
+      {/* Fondo con el patrón de nubes */}
       <div className="bg-patron">
-        {/* Capa de patrón de nubes */}
         <div className="cloud-pattern"></div>
-
-        {/* Nubes flotantes */}
         <div className="floating-clouds"></div>
-
-        {/* Efecto de blur */}
         <div className="blur-effect"></div>
-
-        {/* Contenido principal */}
         <div className="main-content">
           <NavBar />
-          <Hero />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <Hero />
+                  <ItemListContainer />
+                </>
+              }
+            />
+            {/* <Route
+              path="/categoria/:categoria"
+              element={
+                <>
+                  <Hero />
+                  <ItemListContainer />
+                </>
+              }
+            /> */}
+            <Route path="*" element={<h2>404 - Página no encontrada</h2>} />
+          </Routes>
         </div>
-        <ItemListContainer greetings={"Bienvenido a AKATSUKI!"} />
       </div>
     </>
   )
