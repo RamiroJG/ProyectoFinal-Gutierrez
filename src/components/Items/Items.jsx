@@ -20,7 +20,7 @@ const Items = ({
                     {discountPrice ? (
                         <span className="badge sale">Oferta</span>
                     ) : isBestseller ? (
-                        <span className="badge bestseller">Bestseller</span>
+                        <span className="badge bestseller">Mas vendido</span>
                     ) : isNew ? (
                         <span className="badge new">Nuevo</span>
                     ) : null}
