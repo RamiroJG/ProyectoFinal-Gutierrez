@@ -1,0 +1,170 @@
+.not-found-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+}
+  
+/* Elementos de fondo */
+.background-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+  
+/* Contenido principal */
+.not-found-content {
+    background-color: white;
+    border-radius: 16px;
+    padding: 40px;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 2;
+    margin: 0 auto;
+}
+  
+.error-code {
+    font-size: 120px;
+    font-weight: 900;
+    color: #f97316;
+    line-height: 1;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 0 #000;
+    position: relative;
+}
+  
+.error-code::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background-color: #f97316;
+    border-radius: 2px;
+}
+  
+.error-image {
+    margin: 20px auto;
+    width: 200px;
+    height: 200px;
+    position: relative;
+}
+  
+.naruto-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+  
+.error-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+}
+  
+.error-message {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+  
+.error-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+  
+.home-button,
+.back-button {
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.home-button {
+    background-color: #f97316;
+    color: white;
+    border: none;
+}
+  
+.home-button:hover {
+    background-color: #ea580c;
+    transform: translateY(-2px);
+}
+  
+.back-button {
+    background-color: white;
+    color: #333;
+    border: 2px solid #ddd;
+}
+  
+.back-button:hover {
+    border-color: #ccc;
+    background-color: #f8f8f8;
+    transform: translateY(-2px);
+}
+  
+.ninja-quote {
+    font-style: italic;
+    color: #777;
+    font-size: 14px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+  
+/* Responsive */
+  @media (max-width: 480px) {
+    .not-found-content {
+        padding: 30px 20px;
+}
+  
+.error-code {
+    font-size: 80px;
+}
+  
+.error-title {
+    font-size: 22px;
+}
+  
+.error-image {
+    width: 150px;
+    height: 150px;
+}
+  
+.error-actions {
+    flex-direction: column;
+}
+  
+.home-button,
+.back-button {
+        width: 100%;
+    }
+}
+  
+  

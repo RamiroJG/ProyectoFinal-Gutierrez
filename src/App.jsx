@@ -4,6 +4,7 @@ import Hero from './components/Hero/Hero'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ItemDetail from './components/ItemDetail/ItemDetail'
 import './App.css'
+import NotFound from './components/NotFound/NotFound'
 
 const App = () => {
   return (
@@ -18,7 +19,7 @@ const App = () => {
         }
       />
       <Route
-        path="/:categoria"
+        path="/categoria/:categoria"
         element={
           <Layout>
             <Hero />
@@ -38,7 +39,7 @@ const App = () => {
         path="*"
         element={
           <Layout>
-            <h2>404 - Página no encontrada</h2>
+            <NotFound />
           </Layout>
         }
       />

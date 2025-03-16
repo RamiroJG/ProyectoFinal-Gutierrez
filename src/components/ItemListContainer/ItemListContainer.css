@@ -39,4 +39,9 @@
     transition: background-color 0.2s ease;
     margin: 0 auto;
 }
+
+.loader-container {
+    position: relative;
+    left: 137.5%;
+}
 /* ItemListContainer FINAL */

@@ -7,11 +7,10 @@ const Tabs = ({ activeTab, setActiveTab }) => {
     const handleTabClick = (tabValue) => {
         setActiveTab(tabValue)
 
-        // Si es "all", volvemos a la raíz "/", sino vamos a "/figures", "/clothing", etc.
         if (tabValue === "all") {
             navigate("/")
         } else {
-            navigate(`/${tabValue}`)
+            navigate(`/categoria/${tabValue}`)
         }
     }
 

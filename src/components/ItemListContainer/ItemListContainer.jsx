@@ -4,6 +4,7 @@ import Items from '../Items/Items'
 import Tabs from '../Tabs/Tabs'
 import fetchData from '../../fetchData'
 import './ItemListContainer.css'
+import Loader from '../Loader/Loader'
 
 const ItemListContainer = () => {
     const { categoria } = useParams()
@@ -48,7 +49,9 @@ const ItemListContainer = () => {
 
                 <div className='grid_items text-center'>
                     {loading ? (
-                        <p>Cargando productos...</p>
+                        <div className='loader-container'>
+                            <Loader />
+                        </div>
                     ) : (
                         productosFiltrados.map(producto => (
                             <Items
