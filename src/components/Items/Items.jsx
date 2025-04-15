@@ -9,8 +9,11 @@ const Items = ({
     isNew = false,
     isBestseller = false,
     discountPrice = null,
-    id
+    id,
+    agregarCarrito,
+    productos
 }) => {
+
     return (
         <div className="product-card-container">
             <div className="card">
@@ -46,9 +49,9 @@ const Items = ({
                 </div>
 
                 <div className='flex-carrito-detalle'>
-                    <button className="add-to-cart-button" disabled={!nombre}>
+                    {/* <button className="add-to-cart-button" onClick={() => agregarCarrito(productos)} disabled={!nombre}>
                         🛒 Añadir al carrito
-                    </button>
+                    </button> */}
                     <Link to={`/detalle/${id}`} className="add-to-cart-button" disabled={!nombre}>
                         👀 Ver detalle
                     </Link>

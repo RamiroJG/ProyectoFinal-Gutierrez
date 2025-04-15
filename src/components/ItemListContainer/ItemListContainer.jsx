@@ -2,21 +2,32 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Items from '../Items/Items'
 import Tabs from '../Tabs/Tabs'
-import fetchData from '../../fetchData'
-import './ItemListContainer.css'
 import Loader from '../Loader/Loader'
+import './ItemListContainer.css'
+import { getProductos } from '../../services/firebaseService'
 
 const ItemListContainer = () => {
     const { categoria } = useParams()
     const [productos, setProductos] = useState([])
     const [loading, setLoading] = useState(true)
     const [activeTab, setActiveTab] = useState(categoria || "all")
+    const [carrito, setCarrito] = useState([])
+
+    // Función para agregar productos al carrito
+    const agregarCarrito = (producto) => {
+        setCarrito([...carrito, producto])
+    }
 
     useEffect(() => {
-        fetchData().then(data => {
-            setProductos(data)
-            setLoading(false)
-        })
+        getProductos()
+            .then(data => {
+                setProductos(data)
+                setLoading(false)
+            })
+            .catch(error => {
+                console.error("Error al obtener productos: ", error)
+                setLoading(false)
+            })
     }, [])
 
     // Cada vez que cambie la categoría en la URL, actualiza el estado
@@ -42,7 +53,6 @@ const ItemListContainer = () => {
                 <div className='flex-destacados-title'>
                     <h3>Productos destacados</h3>
                     <p>Descubre nuestra selección de productos más populares del mundo de Naruto</p>
-
                     {/* Tabs para cambiar de categoría */}
                     <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
                 </div>
@@ -65,6 +75,8 @@ const ItemListContainer = () => {
                                 isNew={producto.isNew}
                                 isBestseller={producto.isBestseller}
                                 discountPrice={producto.discountPrice}
+                                agregarCarrito={agregarCarrito}
+                                productos={producto}
                             />
                         ))
                     )}

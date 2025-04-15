@@ -10,7 +10,9 @@ const NavBar = () => {
             <header className="contenedor separacion-header">
                 <div className="header contenedor-header">
                     <div className="logo">
-                        <h1>AKATSUKI</h1>
+                        <Link to={'/'}>
+                            <h1>AKATSUKI</h1>
+                        </Link>
                         <img src={DevImge} alt="" />
                     </div>
 
